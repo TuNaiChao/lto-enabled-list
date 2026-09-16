@@ -1,5 +1,16 @@
-template-repository (1.0-1) unstable; urgency=medium
+lto-enabled-list (1.0deepin1) unstable; urgency=medium
 
-  * Initial release
+  * Initial UOS package. The vendor build feature optimize/lto now
+    follows an opt-in model: only the source packages listed here
+    are built with LTO by default, every other package stays
+    unchanged unless its own packaging opts in explicitly.
+  * Initial population: the update-lto-20260910 rebuild campaign
+    (deepin-community project 818) — 619 source packages with a
+    merged "Rebuild with LTO enabled" pull request (618 original
+    batch plus a 12-package supplementary batch from 2026-09-12),
+    tagged any. Not listed: the four packages later confirmed
+    broken (boost1.83, kwin, lapack, openexr), and binutils,
+    cdrkit, gnustep-make, libnfs, x264, whose debian/rules hardcode
+    CFLAGS so the injected LTO flags never reach the compiler.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- tunaichao <tunaichao@uniontech.com>  Wed, 16 Sep 2026 16:20:00 +0800

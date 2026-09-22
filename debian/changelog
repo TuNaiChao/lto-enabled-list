@@ -1,3 +1,17 @@
+lto-enabled-list (1.0deepin2) unstable; urgency=medium
+
+  * Remove gcc-12 and python3.12 from the list (619 -> 617 entries).
+  * Both already build with LTO (and PGO) through their own packaging
+    rules, so the vendor optimize/lto injection adds nothing for
+    them: gcc-12 hardcodes the bootstrap stage flags (bootstrap-lto
+    + profiled bootstrap) and the injected flags never reach the
+    compiler; python3.12 sets with_lto/with_pgo itself on
+    upstream-supported architectures, and on loong64/sw64 its rules
+    enable neither, so injection would be an untested first LTO
+    build there.
+
+ -- tunaichao <tunaichao@uniontech.com>  Tue, 22 Sep 2026 10:49:29 +0800
+
 lto-enabled-list (1.0deepin1) unstable; urgency=medium
 
   * Initial UOS package. The vendor build feature optimize/lto now

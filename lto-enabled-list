@@ -116,7 +116,6 @@ fstrm any
 fuse3 any
 fuse-exfat any
 game-music-emu any
-gcc-12 any
 gcc-defaults any
 gcr any
 gcr4 any
@@ -512,7 +511,6 @@ pugixml any
 pycairo any
 pydot any
 pysmbc any
-python3.12 any
 python-apt any
 python-autocommand any
 python-cffi any
